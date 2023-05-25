@@ -19,5 +19,9 @@ auto Developer::get_alias() -> std::string
 
 void JuniorDeveloper::solve_problem()
 {
-    std::cout << "Thats too hard for me";
+    std::cout << "\033[31m=============================================================\033[0m\n" << std::endl;
+    std::cout << "Solving a Problem:" << std::endl;
+    // streamoperator
+    std::cout << "That was pretty hard. Next time this should do someone else" << std::endl;
+    Developer::drink_coffee();
 }
