@@ -25,3 +25,9 @@ void JuniorDeveloper::solve_problem()
     std::cout << "That was pretty hard. Next time this should do someone else" << std::endl;
     Developer::drink_coffee();
 }
+
+void operator<<(/*unused*/)
+{
+    std::cout << "Name: " << this->get_name() << std::endl;
+    std::cout << "Alias: " << this->get_alias() << std::endl;
+}
