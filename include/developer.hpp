@@ -11,7 +11,7 @@ class Developer
     virtual void solve_problem() = 0;
     auto get_name() -> std::string;
     auto get_alias() -> std::string;
-    virtual ~Developer();
+    // virtual ~Developer();
 
    private:
     std::string name_;

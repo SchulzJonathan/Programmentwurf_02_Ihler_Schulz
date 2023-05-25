@@ -30,15 +30,18 @@ void SeniorDeveloper::solve_problem()
 {
     std::cout << "\033[31m=============================================================\033[0m\n" << std::endl;
     std::cout << "Solving a Problem:" << std::endl;
-    //<< this;
+    // std::cout << this << std::endl;
     std::cout << "Nothing could be easier." << std::endl;
     Developer::drink_coffee();
 }
-void operator<<(/*unused*/)
-{
-    std::cout << "Name: " << this->get_name() << std::endl;
-    std::cout << "Alias: " << this->get_alias() << std::endl;
-}
+
+// std::ostream &operator<< (std::ostream &os, SeniorDeveloper & abc)
+// {
+//     std::string cdf = abc.get_name();
+//     os << cdf;
+//     //stream << "Alias: " << abc.get_alias() << std::endl;
+//     return os;
+// }
 
 Developer::Developer(const std::string name, const std::string alias)
 {
@@ -46,10 +49,10 @@ Developer::Developer(const std::string name, const std::string alias)
     alias_ = alias;
 }
 
-JuniorDeveloper(const std::string name, const std::string alias) : Developer(name, alias)
+JuniorDeveloper::JuniorDeveloper(const std::string name, const std::string alias) : Developer(name, alias)
 {
 }
 
-SeniorDeveloper(const std::string name, const std::string alias) : Developer(name, alias)
+SeniorDeveloper::SeniorDeveloper(const std::string name, const std::string alias) : Developer(name, alias)
 {
 }
