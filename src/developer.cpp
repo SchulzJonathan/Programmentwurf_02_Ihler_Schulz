@@ -21,13 +21,35 @@ void JuniorDeveloper::solve_problem()
 {
     std::cout << "\033[31m=============================================================\033[0m\n" << std::endl;
     std::cout << "Solving a Problem:" << std::endl;
-    // streamoperator
+    //<< this;
     std::cout << "That was pretty hard. Next time this should do someone else" << std::endl;
     Developer::drink_coffee();
 }
 
+void SeniorDeveloper::solve_problem()
+{
+    std::cout << "\033[31m=============================================================\033[0m\n" << std::endl;
+    std::cout << "Solving a Problem:" << std::endl;
+    //<< this;
+    std::cout << "Nothing could be easier." << std::endl;
+    Developer::drink_coffee();
+}
 void operator<<(/*unused*/)
 {
     std::cout << "Name: " << this->get_name() << std::endl;
     std::cout << "Alias: " << this->get_alias() << std::endl;
+}
+
+Developer::Developer(const std::string name, const std::string alias)
+{
+    name_ = name;
+    alias_ = alias;
+}
+
+JuniorDeveloper(const std::string name, const std::string alias) : Developer(name, alias)
+{
+}
+
+SeniorDeveloper(const std::string name, const std::string alias) : Developer(name, alias)
+{
 }
