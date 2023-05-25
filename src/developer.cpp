@@ -21,3 +21,9 @@ void JuniorDeveloper::solve_problem()
 {
     std::cout << "Thats too hard for me";
 }
+
+void operator<<(/*unused*/)
+{
+    std::cout << "Name: " << this->get_name() << std::endl;
+    std::cout << "Alias: " << this->get_alias() << std::endl;
+}
