@@ -9,13 +9,13 @@ class DeveloperTestFixture : public ::testing ::Test
     JuniorDeveloper jun_dev_ = JuniorDeveloper("Maximilia Musterfrau", "Mäxi");
 };
 
-TEST_F(DeveloperTestFixture, SeniorDeveloper_get)
+TEST_F(DeveloperTestFixture, GetSeniorDeveloper)
 {
     EXPECT_EQ("Maximilian Mustermann", sen_dev_.get_name());
     EXPECT_EQ("Max", sen_dev_.get_alias());
 }
 
-TEST_F(DeveloperTestFixture, JuniorDeveloper_get)
+TEST_F(DeveloperTestFixture, GetJuniorDeveloper)
 {
     EXPECT_EQ("Maximilia Musterfrau", jun_dev_.get_name());
     EXPECT_EQ("Mäxi", jun_dev_.get_alias());
