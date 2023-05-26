@@ -3,6 +3,7 @@
 
 #include <string>
 
+// Here is the basic class Developer defined
 class Developer
 {
    public:
@@ -11,13 +12,14 @@ class Developer
     virtual void solve_problem() = 0;
     auto get_name() -> std::string;
     auto get_alias() -> std::string;
-    // virtual ~Developer();
+    virtual ~Developer();
 
    private:
     std::string name_;
     std::string alias_;
 };
 
+// Here ist the derived class JuniorDeveloper defined
 class JuniorDeveloper : public Developer
 {
    public:
@@ -25,6 +27,7 @@ class JuniorDeveloper : public Developer
     JuniorDeveloper(std::string name, std::string alias);
 };
 
+// Here ist the derived class SeniorDeveloper defined
 class SeniorDeveloper : public Developer
 {
    public:
