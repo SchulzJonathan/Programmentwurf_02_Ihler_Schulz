@@ -1,0 +1,25 @@
+name: Run Google Tests
+
+on: push
+
+env:
+  BUILD_TYPE: Release
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Install gtest
+      run: sudo apt-get install libgtest-dev
+    
+    - name: configure cmake
+      working-directory: ${{github.workspace}}/Programmentwurf_02_Ihler_Schulz/
+      run: cmake -B build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} \
+    
+    - name: run cmake
+      run: cmake --build ${{github.workspace}}/Programmentwurf_02_Ihler_Schulz/build --config ${{env.BUILD_TYPE}}
+
+    - name: Test
+      working-directory: ${{github.workspace}}/Programmentwurf_02_Ihler_Schulz/build
+      run: ctest
