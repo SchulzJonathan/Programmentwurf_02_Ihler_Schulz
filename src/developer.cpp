@@ -2,9 +2,6 @@
 #include <iostream>
 #include <string>
 
-Developer::~Developer()
-{
-}
 
 // The drink_coffee method prints out the following text
 void Developer::drink_coffee()
@@ -13,19 +10,19 @@ void Developer::drink_coffee()
 }
 
 // Getter method for the name
-auto Developer::get_name() -> std::string
+auto Developer::get_name() const -> const std::string&
 {
     return name_;
 }
 
 // Getter method for the alias
-auto Developer::get_alias() -> std::string
+auto Developer::get_alias() const -> const std::string&
 {
     return alias_;
 }
 
 // overloading the << operator, so the Developer class can be printed using std::cout << <Developer>;
-std::ostream& operator<<(std::ostream& printthis, Developer& developertoprint)
+std::ostream& operator<<(std::ostream& printthis, const Developer& developertoprint)
 {
     printthis << "\033[36;4mName\033[0m:  " << developertoprint.get_name() << std::endl;
     printthis << "\033[36;4mAlias\033[0m: " << developertoprint.get_alias();
@@ -57,18 +54,14 @@ void SeniorDeveloper::solve_problem()
 }
 
 // Constructor of the basic class Developer
-Developer::Developer(const std::string name, const std::string alias)
-{
-    name_ = name;
-    alias_ = alias;
-}
-
-// Constructor of the derived class JuniorDeveloper with calling the constructor of the bascic class Developer
-JuniorDeveloper::JuniorDeveloper(const std::string name, const std::string alias) : Developer(name, alias)
+Developer::Developer(const std::string& name, const std::string& alias) : name_(name), alias_(alias)
 {
 }
 
-// Constructor of the derived class SeniorDeveloper with calling the constructor of the bascic class Developer
-SeniorDeveloper::SeniorDeveloper(const std::string name, const std::string alias) : Developer(name, alias)
+JuniorDeveloper::JuniorDeveloper(const std::string& name, const std::string& alias) : Developer(name, alias)
+{
+}
+
+SeniorDeveloper::SeniorDeveloper(const std::string& name, const std::string& alias) : Developer(name, alias)
 {
 }
