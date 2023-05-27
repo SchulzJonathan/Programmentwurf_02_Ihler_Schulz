@@ -11,7 +11,7 @@ class Developer
     std::string alias_;
 
    public:
-    Developer(const std::string& name, const std::string& alias);
+    Developer(std::string name, std::string alias);
     static void drink_coffee();
     virtual void solve_problem() = 0;
     auto get_name() const -> const std::string&;

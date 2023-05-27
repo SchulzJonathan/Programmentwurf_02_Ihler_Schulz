@@ -2,7 +2,6 @@
 #include <iostream>
 #include <string>
 
-
 // The drink_coffee method prints out the following text
 void Developer::drink_coffee()
 {
@@ -22,7 +21,7 @@ auto Developer::get_alias() const -> const std::string&
 }
 
 // overloading the << operator, so the Developer class can be printed using std::cout << <Developer>;
-std::ostream& operator<<(std::ostream& printthis, const Developer& developertoprint)
+auto operator<<(std::ostream& printthis, const Developer& developertoprint) -> std::ostream&
 {
     printthis << "\033[36;4mName\033[0m:  " << developertoprint.get_name() << std::endl;
     printthis << "\033[36;4mAlias\033[0m: " << developertoprint.get_alias();
@@ -54,7 +53,7 @@ void SeniorDeveloper::solve_problem()
 }
 
 // Constructor of the basic class Developer
-Developer::Developer(const std::string& name, const std::string& alias) : name_(name), alias_(alias)
+Developer::Developer(std::string name, std::string alias) : name_{std::move(name)}, alias_{std::move(alias)}
 {
 }
 
