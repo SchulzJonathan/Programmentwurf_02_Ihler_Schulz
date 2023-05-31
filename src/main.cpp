@@ -13,9 +13,12 @@ auto main() -> int
     // Adding our Developers to our vector
     developer_group.push_back(sen_dev);
     developer_group.push_back(jun_dev);
-    // Let the develolpers solve some problems
+    // Let the develolpers solve some problems and cast them to its base class 
     for (auto& current_dev : developer_group)
     {
-        current_dev->solve_problem();
+        if (auto base_dev = std::dynamic_pointer_cast<Developer>(current_dev))
+        {
+            base_dev->solve_problem();  
+        }
     };
 }
