@@ -28,8 +28,8 @@ auto operator<<(std::ostream& printthis, const Developer& developertoprint) -> s
     return printthis;
 }
 
-// Implementing the solve_problem method for the JuniorDeveloper with printing out  the text "Solving a Problem:" an
-// calling the stream-operator and the drink coffee mehtod
+// Implementing the solve_problem method for the JuniorDeveloper with printing out  the text "Solving a Problem:" and
+// calling the stream-operator and the drink coffee method
 void JuniorDeveloper::solve_problem()
 {
     std::cout << "\033[37;1m=============================================================\033[0m" << std::endl;
@@ -40,8 +40,8 @@ void JuniorDeveloper::solve_problem()
     std::cout << "\033[37;1m=============================================================\033[0m" << std::endl;
 }
 
-// Implementing the solve_problem method for the SeniorDeveloper with printing out  the text "Solving a Problem:" an
-// calling the stream-operator and the drink coffee mehtod
+// Implementing the solve_problem method for the SeniorDeveloper with printing out  the text "Solving a Problem:" and
+// calling the stream-operator and the drink coffee method
 void SeniorDeveloper::solve_problem()
 {
     std::cout << "\033[37;1m=============================================================\033[0m" << std::endl;
@@ -57,10 +57,13 @@ Developer::Developer(std::string name, std::string alias) : name_{std::move(name
 {
 }
 
+//Constructor of the derived class JuniorDeveloper
 JuniorDeveloper::JuniorDeveloper(const std::string& name, const std::string& alias) : Developer(name, alias)
+
 {
 }
 
+//Constructor of the derived class SeniorDeveloper
 SeniorDeveloper::SeniorDeveloper(const std::string& name, const std::string& alias) : Developer(name, alias)
 {
 }
