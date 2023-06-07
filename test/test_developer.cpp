@@ -10,14 +10,14 @@ class DeveloperTestFixture : public ::testing ::Test
     JuniorDeveloper jun_dev_ = JuniorDeveloper("Maximilia Musterfrau", "Mäxi");
 };
 
-// Testfixture for the SeniorDeveloper constructor and get_name and get_alias mehtods
+// Testfixture for the SeniorDeveloper constructor and get_name and get_alias methods
 TEST_F(DeveloperTestFixture, GetSeniorDeveloper)
 {
     EXPECT_EQ("Maximilian Mustermann", sen_dev_.get_name());
     EXPECT_EQ("Max", sen_dev_.get_alias());
 }
 
-// Testfixture for the JuniorDeveloper constructor and get_name and get_alias mehtods
+// Testfixture for the JuniorDeveloper constructor and get_name and get_alias methods
 TEST_F(DeveloperTestFixture, GetJuniorDeveloper)
 {
     EXPECT_EQ("Maximilia Musterfrau", jun_dev_.get_name());

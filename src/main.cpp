@@ -14,7 +14,7 @@ auto main() -> int
     developer_group.push_back(std::dynamic_pointer_cast<Developer>(sen_dev));
     developer_group.push_back(std::dynamic_pointer_cast<Developer>(jun_dev));
     
-    // Let the develolpers solve some problems and cast them to its base class
+    // Let the developers solve some problems
     for (auto& current_dev : developer_group)
     {
         current_dev -> solve_problem();
