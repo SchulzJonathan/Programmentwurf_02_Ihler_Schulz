@@ -35,7 +35,7 @@ void JuniorDeveloper::solve_problem()
     std::cout << "\033[37;1m=============================================================\033[0m" << std::endl;
     std::cout << "\033[34;1;4mSolving a Problem:\033[0m" << std::endl;
     std::cout << *this << std::endl;
-    std::cout << "That was pretty hard. Next time this should do someone else" << std::endl;
+    std::cout << "That was pretty hard. Next time, this should be done by someone else" << std::endl;
     this->drink_coffee();
     std::cout << "\033[37;1m=============================================================\033[0m" << std::endl;
 }
